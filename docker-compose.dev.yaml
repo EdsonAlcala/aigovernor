@@ -1,0 +1,42 @@
+version: '3'
+services:
+  bot1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - ACCOUNT_INDEX=0
+  bot2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - ACCOUNT_INDEX=1
+  bot3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - ACCOUNT_INDEX=2
+  bot4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - ACCOUNT_INDEX=3
+  bot5:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - ACCOUNT_INDEX=4

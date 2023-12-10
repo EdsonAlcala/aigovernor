@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/governance/extensions/GovernorTimelockControl.so
 
 import "./GovernorAIAssisted.sol";
 
-// @notice Custon OZ Governor implementation that adds the notion of Proposer token and Voting token.
+// @notice Custom OZ Governor implementation that adds the notion of Proposer token and Voting token.
 // This means proposer token holders can only make a proposal if they have enough tokens.
 // This is still compatible with UIs like Tally and allow users to delegate between them.
 // However, only the voting token holders will be able to vote on the proposal.
