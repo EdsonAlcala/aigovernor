@@ -2,6 +2,7 @@ import { HardhatRuntimeEnvironment } from 'hardhat/types';
 import { DeployFunction } from 'hardhat-deploy/types';
 
 import { generateAddressesFromMnemonic } from "../utils"
+import { CONSTANTS } from '../constants'
 import { config } from '../config';
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
@@ -18,13 +19,13 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         }
     });
 
-    await deploy('AIGovernanceToken', {
+    await deploy(CONSTANTS.AIGovernanceToken, {
         from: deployer,
         args: [recipients],
         log: true,
     });
 
-    await deploy('ProposerToken', {
+    await deploy(CONSTANTS.ProposerToken, {
         from: deployer,
         args: [],
         log: true,
@@ -33,4 +34,4 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 };
 export default func;
 
-func.tags = ['all', 'AIGovernanceToken', 'ProposerToken', 'tokens'];
+func.tags = [CONSTANTS.ALL, CONSTANTS.AIGovernanceToken, CONSTANTS.ProposerToken, 'tokens'];
