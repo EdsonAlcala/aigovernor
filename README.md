@@ -6,7 +6,7 @@ AI Governor is a OpenZeppelin Governor extension that enables any protocol to de
 
 ## Features
 
-- Fully compatible with existing governance platforms like Tally.
+- Fully compatible with existing governance platforms like Tally
 - Easy to implement
 - Scalable and configurable
 - Remove humans from governance decisions
