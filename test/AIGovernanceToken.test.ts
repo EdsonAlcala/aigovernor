@@ -2,18 +2,19 @@ import { expect } from "chai";
 import { deployments, ethers } from "hardhat";
 
 import { AIGovernanceToken, AIGovernanceToken__factory } from '../typechain-types'
+import { CONSTANTS } from "../constants";
 
 describe("AIGovernanceToken Tests", function () {
     let aiGovernanceToken: AIGovernanceToken;
 
     const TOKEN_NAME = "AIGovernance Token";
-    const TOKEN_SYMBOL = "AIGovernor";
+    const TOKEN_SYMBOL = CONSTANTS.AIGovernanceToken;
     const TOKEN_DECIMALS = 18;
     const TOTAL_SUPPLY = ethers.parseEther("100000000"); // 100 million
 
     beforeEach(async function () {
-        await deployments.fixture("AIGovernanceToken");
-        const proposerTokenDeployment = await deployments.get("AIGovernanceToken");
+        await deployments.fixture(CONSTANTS.AIGovernanceToken);
+        const proposerTokenDeployment = await deployments.get(CONSTANTS.AIGovernanceToken);
 
         aiGovernanceToken = AIGovernanceToken__factory.connect(proposerTokenDeployment.address, ethers.provider);
     })

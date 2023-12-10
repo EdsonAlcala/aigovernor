@@ -14,7 +14,10 @@ contract AIGovernanceToken is ERC20, ERC20Votes {
         uint256 amount;
     }
 
-    constructor(Recipient[] memory _recipients) ERC20("AIGovernance Token", "AIGovernor") ERC20Permit("AIGovernor") {
+    constructor(Recipient[] memory _recipients)
+        ERC20("AIGovernance Token", "AIGovernanceToken")
+        ERC20Permit("AIGovernanceToken")
+    {
         for (uint256 i = 0; i < _recipients.length; i++) {
             _mint(_recipients[i].to, _recipients[i].amount);
         }
