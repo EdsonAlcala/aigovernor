@@ -7,7 +7,11 @@
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.3",
     "dotenv": "^16.3.1",
-    "hardhat-deploy": "^0.11.44"
+    "exponential-backoff": "^3.1.1",
+    "hardhat-deploy": "^0.11.44",
+    "openai": "^4.20.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "compile": "hardhat compile",
