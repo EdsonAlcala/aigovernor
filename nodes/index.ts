@@ -14,8 +14,6 @@ const ACCOUNT_INDEX = process.env.ACCOUNT_INDEX || 0;
 
 const web3SockerProvider = new ethers.WebSocketProvider(WEB_SOCKET_URL);
 
-console.log("OPENAI_API_KEY", process.env.OPENAI_API_KEY);
-
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
@@ -113,7 +111,7 @@ const main = async () => {
 }
 
 const getDecision = async (proposal: string) => {
-    const chatCompletion: OpenAI.Chat.ChatCompletion = await openai.chat.completions.create({
+    const chatCompletion: OpenAI.Chat.ChatCompletion = await backOff(() => openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
             {
@@ -125,7 +123,7 @@ const getDecision = async (proposal: string) => {
                 "content": "You must make a clear 'Yay' or 'Nay' vote. Respond in the following format: Answer: <answer>. Here's a proposal for you to consider: " + proposal
             }
         ],
-    })
+    }))
 
     console.log(chatCompletion.choices[0].message);
 
