@@ -11,6 +11,9 @@
   },
   "scripts": {
     "compile": "hardhat compile",
-    "test": "hardhat test"
+    "test": "hardhat test",
+    "deploy": "hardhat deploy",
+    "deploy:base-goerli": "hardhat deploy --network base_goerli --reset",
+    "start:node": "ts-node nodes/index.ts"
   }
 }
